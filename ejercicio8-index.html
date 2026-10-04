@@ -1,0 +1,24 @@
+<p>¿Capital de Argentina?</p>
+<select id="q1">
+  <option value="0">Córdoba</option>
+  <option value="1">Buenos Aires</option>
+  <option value="0">Rosario</option>
+</select>
+
+<!-- Repetir para otras preguntas -->
+<button onclick="corregir()">Corregir</button>
+<p id="resultado"></p>
+
+<script>
+function corregir() {
+  let correctas = 0;
+  let incorrectas = 0;
+
+  let respuestas = [document.getElementById("q1").value /*, q2, q3, q4 */];
+
+  respuestas.forEach(r => (r == "1") ? correctas++ : incorrectas++);
+  
+  document.getElementById("resultado").innerText =
+    `Correctas: ${correctas}, Incorrectas: ${incorrectas}`;
+}
+</script>
